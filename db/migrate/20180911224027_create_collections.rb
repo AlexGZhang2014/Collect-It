@@ -3,6 +3,7 @@ class CreateCollections < ActiveRecord::Migration[5.0]
     create_table :collections do |t|
       t.string :name
       t.string :description
+      t.string :owner
 
       t.timestamps
     end
