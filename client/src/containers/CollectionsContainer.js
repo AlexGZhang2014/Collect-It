@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import Collections from '../components/collections/Collections.js'
+import { connect } from 'react-redux'
+import Collections from '../components/collections/Collections'
+import fetchCollections from '../actions/collectionActions'
 
 class CollectionsContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collections: []
-    }
-  }
 
   componentDidMount() {
-    fetch('/api/v1/collections.json')
-      .then(response => response.json())
-      .then(collectionData => this.setState({
-        collections: collectionData
-      }))
+    this.props.fetchCollections()
   }
 
   render() {
     return (
       <div className="collections-container">
-        <Collections collections={this.state.collections}/>
+        <Collections collections={this.props.collections}/>
       </div>
     )
   }
 }
 
-export default CollectionsContainer
+const mapStateToProps = state => ({
+  collections: state.collections.collections
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchCollections: () => dispatch(fetchCollections())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionsContainer)
