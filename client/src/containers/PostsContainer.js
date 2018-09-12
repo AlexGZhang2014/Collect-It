@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Posts from '../components/posts/Posts.js'
 
 class PostsContainer extends Component {
   constructor(props) {
@@ -19,15 +20,7 @@ class PostsContainer extends Component {
   render() {
     return (
       <div className="posts-container">
-        {this.state.posts.map(post => {
-          return (
-            <div className="post" key={post.id}>
-              <h3>{post.title}</h3>
-              <h4>Written by: {post.author}</h4>
-              <p>{post.content}</p>
-            </div>
-          )
-        })}
+        <Posts posts={this.state.posts}/>
       </div>
     )
   }
