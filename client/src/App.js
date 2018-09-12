@@ -4,7 +4,8 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import PostsContainer from './containers/PostsContainer'
+import PostsContainer from './containers/PostsContainer';
+import CollectionsContainer from './containers/CollectionsContainer';
 
 class App extends Component {
   render() {
