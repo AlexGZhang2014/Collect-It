@@ -12,6 +12,7 @@ class Post extends Component {
         <h2>{post.title}</h2>
         <h4>Written by: {post.author} (<Moment date={post.created_at} fromNow />)</h4>
         <p>{post.content}</p>
+        <button onClick={() => this.props.deletePost(post.id)}>X</button>
         <CommentsContainer post={post}/>
       </div>
     )

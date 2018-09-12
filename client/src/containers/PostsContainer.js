@@ -15,7 +15,7 @@ class PostsContainer extends Component {
       <div className="posts-container">
         <h1>Your Posts Feed!</h1>
         <PostInput addPost={this.props.addPost}/>
-        <Posts posts={this.props.posts}/>
+        <Posts posts={this.props.posts} deletePost={this.props.deletePost}/>
       </div>
     )
   }
