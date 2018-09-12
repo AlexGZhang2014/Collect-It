@@ -19,6 +19,7 @@ class EditPostForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.updatePost(this.state);
+    this.props.toggleEditOff()
   }
 
   render() {
