@@ -12,6 +12,7 @@ class PostsContainer extends Component {
   render() {
     return (
       <div className="posts-container">
+        <h1>Your Posts Feed!</h1>
         <Posts posts={this.props.posts}/>
       </div>
     )

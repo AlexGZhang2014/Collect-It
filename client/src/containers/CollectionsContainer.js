@@ -12,6 +12,7 @@ class CollectionsContainer extends Component {
   render() {
     return (
       <div className="collections-container">
+        <h1>Your Collections Feed!</h1>
         <Collections collections={this.props.collections}/>
       </div>
     )
