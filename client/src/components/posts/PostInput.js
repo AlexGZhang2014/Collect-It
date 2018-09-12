@@ -15,6 +15,7 @@ class PostInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.props.addPost(this.state);
     this.setState({
       title: '',
       content: '',
