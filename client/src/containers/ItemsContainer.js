@@ -4,7 +4,7 @@ import Items from '../components/items/Items'
 class ItemsContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="items-container">
         <h3>Items:</h3>
         <Items items={this.props.collection.items}/>
       </div>

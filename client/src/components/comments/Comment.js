@@ -4,7 +4,7 @@ import 'moment-timezone'
 
 const Comment = props => {
   return (
-    <div>
+    <div className="comment">
       <h4>{props.comment.author} wrote: (<Moment date={props.comment.created_at} fromNow />)</h4>
       <p>{props.comment.content}</p>
     </div>

@@ -6,7 +6,7 @@ class Comments extends Component {
     const comments = this.props.comments.map(comment => <Comment key={comment.id} comment={comment} />)
 
     return (
-      <div>{ comments }</div>
+      <div className="comments">{ comments }</div>
     )
   }
 }
