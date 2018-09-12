@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Posts from '../components/posts/Posts'
-import { fetchPosts, addPost } from '../actions/postActions'
+import { fetchPosts, addPost, deletePost } from '../actions/postActions'
 import PostInput from '../components/posts/PostInput'
 
 class PostsContainer extends Component {
@@ -28,7 +28,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   addPost: state => dispatch(addPost(state)),
-  deletePost: id => dispatch({ type: 'DELETE_POST', id })
+  deletePost: id => dispatch(deletePost(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer)
