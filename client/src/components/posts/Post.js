@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Post extends Component {
   render() {
@@ -9,6 +10,7 @@ class Post extends Component {
         <h2>{post.title}</h2>
         <h4>Written by: {post.author}</h4>
         <p>{post.content}</p>
+        <CommentsContainer post={post}/>
       </div>
     )
   }
