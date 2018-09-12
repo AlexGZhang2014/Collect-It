@@ -46,3 +46,32 @@ export function deletePost(id) {
       }))
   }
 }
+
+export function updatePost(state) {
+  return dispatch => {
+    dispatch({ type: 'UPDATING_POST'});
+
+    const editedPostData = {
+      post: {
+        id: state.id,
+        title: state.title,
+        content: state.content,
+        author: state.author
+      }
+    }
+
+    fetch('/api/v1/posts/' + state.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(editedPostData)
+    })
+      .then(response => response.json())
+      .then(postJSON => dispatch({
+        type: 'UPDATED_POST',
+        id: postJSON.id,
+        title: postJSON.title,
+        content: postJSON.content,
+        author: postJSON.author
+      }));
+  }
+}
