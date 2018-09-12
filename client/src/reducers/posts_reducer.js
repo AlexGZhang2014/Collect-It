@@ -11,7 +11,7 @@ export default function postsReducer(state = {
       return { loading: false, posts: action.payload }
 
     case 'ADDED_POST':
-      const post = { title: action.title, content: action.content, author: action.author, comments: [] }
+      const post = { id: action.id, title: action.title, content: action.content, author: action.author, comments: [] }
       return { ...state, posts: [...state.posts, post]}
 
     case 'DELETED_POST':

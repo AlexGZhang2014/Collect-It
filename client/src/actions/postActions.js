@@ -27,6 +27,7 @@ export function addPost(state) {
       .then(response => response.json())
       .then(postJSON => dispatch({
         type: "ADDED_POST",
+        id: postJSON.id,
         title: postJSON.title,
         content: postJSON.content,
         author: postJSON.author
