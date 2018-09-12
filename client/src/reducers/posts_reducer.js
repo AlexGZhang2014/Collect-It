@@ -24,14 +24,19 @@ export default function postsReducer(state = {
       }
 
     case 'UPDATED_POST':
+      const editedPost = {
+        id: action.id,
+        title: action.title,
+        content: action.content,
+        author: action.author,
+        comments: action.comments
+      };
+
       let newState = {
         ...state,
-        posts: state.posts.filter(post => post.id !== action.id)
-      }
+        posts: state.posts.filter(post => post.id !== action.id).concat(editedPost)
+      };
 
-      const editedPost = { id: action.id, title: action.title, content: action.content, author: action.author, comments: action.comments };
-
-      newState.posts.concat(editedPost);
       return newState;
 
     default:
