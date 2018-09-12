@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ItemsContainer from '../../containers/ItemsContainer'
 
 class Collection extends Component {
   render() {
@@ -9,6 +10,7 @@ class Collection extends Component {
         <h2>{collection.name}</h2>
         <h4>Owner: {collection.owner}</h4>
         <p>{collection.description}</p>
+        <ItemsContainer collection={collection}/>
       </div>
     )
   }
