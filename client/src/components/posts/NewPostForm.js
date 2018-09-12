@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class PostInput extends Component {
+class NewPostForm extends Component {
   state = {
     title: '',
     content: '',
@@ -48,4 +48,4 @@ class PostInput extends Component {
   }
 }
 
-export default PostInput
+export default NewPostForm

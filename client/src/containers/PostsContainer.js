@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Posts from '../components/posts/Posts'
 import { fetchPosts, addPost, deletePost, updatePost } from '../actions/postActions'
-import PostInput from '../components/posts/PostInput'
+import NewPostForm from '../components/posts/NewPostForm'
 
 class PostsContainer extends Component {
 
@@ -14,7 +14,7 @@ class PostsContainer extends Component {
     return (
       <div className="posts-container">
         <h1>Your Posts Feed!</h1>
-        <PostInput addPost={this.props.addPost}/>
+        <NewPostForm addPost={this.props.addPost}/>
         <Posts posts={this.props.posts} deletePost={this.props.deletePost} updatePost={this.props.updatePost}/>
       </div>
     )
