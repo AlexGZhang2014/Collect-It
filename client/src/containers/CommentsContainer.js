@@ -5,6 +5,7 @@ class CommentsContainer extends Component {
   render() {
     return (
       <div>
+        <h3>Comments:</h3>
         <Comments comments={this.props.post.comments}/>
       </div>
     )
