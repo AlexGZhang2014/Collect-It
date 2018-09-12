@@ -5,7 +5,8 @@ class EditPostForm extends Component {
     id: this.props.post.id,
     title: this.props.post.title,
     content: this.props.post.content,
-    author: this.props.post.author
+    author: this.props.post.author,
+    comments: this.props.post.comments
   }
 
   handleChange = event => {
@@ -18,12 +19,6 @@ class EditPostForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.updatePost(this.state);
-    this.setState({
-      id: this.props.post.id,
-      title: '',
-      content: '',
-      author: ''
-    });
   }
 
   render() {

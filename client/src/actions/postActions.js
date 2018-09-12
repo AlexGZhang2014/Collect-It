@@ -56,7 +56,8 @@ export function updatePost(state) {
         id: state.id,
         title: state.title,
         content: state.content,
-        author: state.author
+        author: state.author,
+        comments: state.comments
       }
     }
 
@@ -71,7 +72,8 @@ export function updatePost(state) {
         id: postJSON.id,
         title: postJSON.title,
         content: postJSON.content,
-        author: postJSON.author
+        author: postJSON.author,
+        comments: postJSON.comments
       }));
   }
 }

@@ -29,7 +29,7 @@ export default function postsReducer(state = {
         posts: state.posts.filter(post => post.id !== action.id)
       }
 
-      const editedPost = { id: action.id, title: action.title, content: action.content, author: action.author, comments: [] };
+      const editedPost = { id: action.id, title: action.title, content: action.content, author: action.author, comments: action.comments };
 
       newState.posts.concat(editedPost);
       return newState;

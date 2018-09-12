@@ -15,7 +15,11 @@ class PostsContainer extends Component {
       <div className="posts-container">
         <h1>Your Posts Feed!</h1>
         <NewPostForm addPost={this.props.addPost}/>
-        <Posts posts={this.props.posts} deletePost={this.props.deletePost} updatePost={this.props.updatePost}/>
+        <Posts
+          posts={this.props.posts}
+          deletePost={this.props.deletePost}
+          updatePost={this.props.updatePost}
+          />
       </div>
     )
   }
