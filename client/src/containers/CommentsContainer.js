@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Comments from '../components/comments/Comments'
 
 class CommentsContainer extends Component {
   render() {
-    const comments = this.props.post.comments.map(comment => <p>{comment.content}</p>)
     return (
       <div>
-        {comments}
+        <Comments comments={this.props.post.comments}/>
       </div>
     )
   }
