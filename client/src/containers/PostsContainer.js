@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import Posts from '../components/posts/Posts.js'
+import { connect } from 'react-redux'
+import Posts from '../components/posts/Posts'
+import fetchPosts from '../actions/postActions'
 
 class PostsContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    }
-  }
 
   componentDidMount() {
-    fetch('/api/v1/posts.json')
-      .then(response => response.json())
-      .then(postData => this.setState({
-        posts: postData
-      }))
+    this.props.fetchPosts()
   }
 
   render() {
     return (
       <div className="posts-container">
-        <Posts posts={this.state.posts}/>
+        <Posts posts={this.props.posts}/>
       </div>
     )
   }
 }
 
-export default PostsContainer
+const mapStateToProps = state => ({
+  posts: state.posts.posts
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchPosts: () => dispatch(fetchPosts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer)
