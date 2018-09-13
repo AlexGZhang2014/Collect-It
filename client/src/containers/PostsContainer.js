@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Posts from '../components/posts/Posts'
 import { fetchPosts, addPost, deletePost, updatePost } from '../actions/postActions'
+import { addComment } from '../actions/commentActions'
 import NewPostForm from '../components/posts/NewPostForm'
 
 class PostsContainer extends Component {
@@ -19,6 +20,7 @@ class PostsContainer extends Component {
           posts={this.props.posts}
           deletePost={this.props.deletePost}
           updatePost={this.props.updatePost}
+          addComment={this.props.addComment}
           />
       </div>
     )
@@ -33,7 +35,8 @@ const mapDispatchToProps = dispatch => ({
   fetchPosts: () => dispatch(fetchPosts()),
   addPost: state => dispatch(addPost(state)),
   deletePost: id => dispatch(deletePost(id)),
-  updatePost: state => dispatch(updatePost(state))
+  updatePost: state => dispatch(updatePost(state)),
+  addComment: state => dispatch(addComment(state))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer)
