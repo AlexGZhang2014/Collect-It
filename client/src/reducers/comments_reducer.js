@@ -20,7 +20,7 @@ export default function commentsReducer(state = {
     case 'DELETED_COMMENT':
       return {
         ...state,
-        comments: state.comments.filter(comment => comment.id !== comment.id)
+        comments: state.comments.filter(comment => comment.id !== action.id)
       }
 
     default:
