@@ -50,3 +50,30 @@ export function deleteComment(id) {
     }
   }
 }
+
+export function updateComment(state) {
+  return dispatch => {
+    dispatch({ type: 'UPDATING_COMMENT'});
+
+    const editedCommentData = {
+      comment: {
+        id: state.id,
+        content: state.content,
+        author: state.author
+      }
+    }
+
+    fetch('/api/v1/comments/' + state.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(editedCommentData)
+    })
+      .then(response => response.json())
+      .then(commentJSON => dispatch({
+        type: 'UPDATED_POST',
+        id: commentJSON.id,
+        content: commentJSON.content,
+        author: commentJSON.author
+      }));
+  }
+}
