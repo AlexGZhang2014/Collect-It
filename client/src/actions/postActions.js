@@ -38,12 +38,13 @@ export function addPost(state) {
 export function deletePost(id) {
   return dispatch => {
     dispatch({ type: 'DELETING_POST' });
-
-    fetch('/api/v1/posts/' + id, { method: 'DELETE' })
-      .then(response => dispatch({
-        type: 'DELETED_POST',
-        id: id
-      }))
+    if (window.confirm("Are you sure?")) {
+      fetch('/api/v1/posts/' + id, { method: 'DELETE' })
+        .then(response => dispatch({
+          type: 'DELETED_POST',
+          id: id
+        }))
+    }
   }
 }
 
