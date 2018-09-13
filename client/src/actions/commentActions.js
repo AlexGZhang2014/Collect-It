@@ -59,7 +59,8 @@ export function updateComment(state) {
       comment: {
         id: state.id,
         content: state.content,
-        author: state.author
+        author: state.author,
+        post_id: state.post.id
       }
     }
 
@@ -73,7 +74,8 @@ export function updateComment(state) {
         type: 'UPDATED_POST',
         id: commentJSON.id,
         content: commentJSON.content,
-        author: commentJSON.author
+        author: commentJSON.author,
+        post: commentJSON.post
       }));
   }
 }
