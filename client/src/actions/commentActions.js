@@ -71,7 +71,7 @@ export function updateComment(state) {
     })
       .then(response => response.json())
       .then(commentJSON => dispatch({
-        type: 'UPDATED_POST',
+        type: 'UPDATED_COMMENT',
         id: commentJSON.id,
         content: commentJSON.content,
         author: commentJSON.author,
