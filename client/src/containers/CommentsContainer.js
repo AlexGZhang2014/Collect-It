@@ -1,15 +1,30 @@
 import React, { Component } from 'react'
 import Comments from '../components/comments/Comments'
+import { fetchComments } from '../actions/commentActions'
+import { connect } from 'react-redux'
 
 class CommentsContainer extends Component {
+
+  componentDidMount() {
+    this.props.fetchComments()
+  }
+
   render() {
     return (
       <div>
         <h3>Comments:</h3>
-        <Comments comments={this.props.post.comments}/>
+        <Comments comments={this.props.comments} post={this.props.post}/>
       </div>
     )
   }
 }
 
-export default CommentsContainer
+const mapStateToProps = state => ({
+  comments: state.comments.comments
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchComments: () => dispatch(fetchComments())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer)
