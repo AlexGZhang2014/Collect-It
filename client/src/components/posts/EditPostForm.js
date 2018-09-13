@@ -24,7 +24,7 @@ class EditPostForm extends Component {
 
   render() {
     return (
-      <div className="post-form" onSubmit={this.handleSubmit}>
+      <div className="edit-post-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your post here!</h2>
           <br />
