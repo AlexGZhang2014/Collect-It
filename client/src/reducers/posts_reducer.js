@@ -34,7 +34,12 @@ export default function postsReducer(state = {
 
       let newState = {
         ...state,
-        posts: state.posts.filter(post => post.id !== action.id).concat(editedPost)
+        posts: state.posts.map(post => {
+          if (post.id !== action.id) {
+            return post;
+          }
+          return editedPost;
+        })
       };
 
       return newState;
