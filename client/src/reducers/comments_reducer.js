@@ -27,12 +27,18 @@ export default function commentsReducer(state = {
       const editedComment = {
         id: action.id,
         content: action.content,
-        author: action.author
+        author: action.author,
+        post: action.post
       };
 
       let newState = {
         ...state,
-        comments: state.comments.filter(comment => comment.id !== action.id).concat(editedComment)
+        comments: state.comments.map(comment => {
+          if (comment.id !== action.id) {
+            return comment;
+          }
+          return editedComment;
+        })
       };
 
       return newState;
