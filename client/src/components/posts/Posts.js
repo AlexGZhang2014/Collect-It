@@ -42,6 +42,7 @@ class Posts extends Component {
                 post={post}
                 deletePost={this.props.deletePost}
                 toggleEditOn={this.toggleEditOn}
+                addComment={this.props.addComment}
                 />
             )
           }
