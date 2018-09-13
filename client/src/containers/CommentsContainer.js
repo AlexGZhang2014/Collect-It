@@ -35,9 +35,10 @@ class CommentsContainer extends Component {
           comments={this.props.comments}
           post={this.props.post}
           deleteComment={this.props.deleteComment}
+          updateComment={this.props.updateComment}
           toggleEditOn={this.toggleEditOn}
           toggleEditOff={this.toggleEditOff}
-          editPostId={this.state.editCommentId}
+          editCommentId={this.state.editCommentId}
           />
       </div>
     )
