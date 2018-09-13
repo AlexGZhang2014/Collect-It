@@ -22,7 +22,7 @@ class AddCommentForm extends Component {
 
   render() {
     return (
-      <div className="post-form" onSubmit={this.handleSubmit}>
+      <div className="new-comment-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Add your comment here!</h2>
           <br />

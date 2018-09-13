@@ -25,7 +25,7 @@ class NewPostForm extends Component {
 
   render() {
     return (
-      <div className="post-form" onSubmit={this.handleSubmit}>
+      <div className="new-post-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Create a new post here!</h2>
           <br />
