@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
 import Comments from '../components/comments/Comments'
-import { fetchComments, deleteComment } from '../actions/commentActions'
+import { fetchComments, deleteComment, updateComment } from '../actions/commentActions'
 import { connect } from 'react-redux'
 
 class CommentsContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editCommentId: null
+    }
+  }
+
+  toggleEditOn = id => {
+    this.setState({
+      editCommentId: id
+    })
+  }
+
+  toggleEditOff = () => {
+    this.setState({
+      editCommentId: null
+    })
+  }
 
   componentDidMount() {
     this.props.fetchComments()
@@ -17,6 +35,9 @@ class CommentsContainer extends Component {
           comments={this.props.comments}
           post={this.props.post}
           deleteComment={this.props.deleteComment}
+          toggleEditOn={this.toggleEditOn}
+          toggleEditOff={this.toggleEditOff}
+          editPostId={this.state.editCommentId}
           />
       </div>
     )
@@ -29,7 +50,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchComments: () => dispatch(fetchComments()),
-  deleteComment: id => dispatch(deleteComment(id))
+  deleteComment: id => dispatch(deleteComment(id)),
+  updateComment: id => dispatch(updateComment(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer)
