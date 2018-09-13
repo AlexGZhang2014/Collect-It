@@ -3,36 +3,18 @@ import Post from './Post'
 import EditPostForm from './EditPostForm'
 
 class Posts extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editPostId: null
-    }
-  }
-
-  toggleEditOn = id => {
-    this.setState({
-      editPostId: id
-    })
-  }
-
-  toggleEditOff = () => {
-    this.setState({
-      editPostId: null
-    })
-  }
 
   render() {
     return (
       <div className="posts">
         {this.props.posts.map(post => {
-          if (this.state.editPostId === post.id) {
+          if (this.props.editPostId === post.id) {
             return (
               <EditPostForm
                 post={post}
                 key={post.id}
                 updatePost={this.props.updatePost}
-                toggleEditOff={this.toggleEditOff}
+                toggleEditOff={this.props.toggleEditOff}
                 />
             )
           } else {
@@ -41,7 +23,7 @@ class Posts extends Component {
                 key={post.id}
                 post={post}
                 deletePost={this.props.deletePost}
-                toggleEditOn={this.toggleEditOn}
+                toggleEditOn={this.props.toggleEditOn}
                 addComment={this.props.addComment}
                 />
             )

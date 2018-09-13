@@ -6,6 +6,24 @@ import { addComment } from '../actions/commentActions'
 import NewPostForm from '../components/posts/NewPostForm'
 
 class PostsContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editPostId: null
+    }
+  }
+
+  toggleEditOn = id => {
+    this.setState({
+      editPostId: id
+    })
+  }
+
+  toggleEditOff = () => {
+    this.setState({
+      editPostId: null
+    })
+  }
 
   componentDidMount() {
     this.props.fetchPosts()
@@ -21,6 +39,9 @@ class PostsContainer extends Component {
           deletePost={this.props.deletePost}
           updatePost={this.props.updatePost}
           addComment={this.props.addComment}
+          toggleEditOn={this.toggleEditOn}
+          toggleEditOff={this.toggleEditOff}
+          editPostId={this.state.editPostId}
           />
       </div>
     )
