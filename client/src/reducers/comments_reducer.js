@@ -23,6 +23,20 @@ export default function commentsReducer(state = {
         comments: state.comments.filter(comment => comment.id !== action.id)
       }
 
+    case 'UPDATED_COMMENT':
+      const editedComment = {
+        id: action.id,
+        content: action.content,
+        author: action.author
+      };
+
+      let newState = {
+        ...state,
+        comments: state.comments.filter(comment => comment.id !== action.id).concat(editedComment)
+      };
+
+      return newState;
+
     default:
       return state;
   }
