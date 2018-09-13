@@ -37,3 +37,16 @@ export function addComment(state) {
       }));
   }
 }
+
+export function deleteComment(id) {
+  return dispatch => {
+    dispatch({ type: 'DELETING_COMMENT' });
+    if (window.confirm("Are you sure?")) {
+      fetch('/api/v1/comments/' + id, { method: 'DELETE' })
+        .then(response => dispatch({
+          type: 'DELETED_COMMENT',
+          id: id
+        }))
+    }
+  }
+}
