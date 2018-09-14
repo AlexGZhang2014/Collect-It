@@ -47,3 +47,36 @@ export function deleteCollection(id) {
     }
   }
 }
+
+export function updateCollection(state) {
+  return dispatch => {
+    dispatch({ type: 'UPDATING_COLLECTION'});
+
+    const editedCollectionData = {
+      collection: {
+        id: state.id,
+        name: state.name,
+        description: state.description,
+        owner: state.owner,
+        items: state.items,
+        reviews: state.reviews
+      }
+    }
+
+    fetch('/api/v1/collections/' + state.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(editedCollectionData)
+    })
+      .then(response => response.json())
+      .then(collectionJSON => dispatch({
+        type: 'UPDATED_POST',
+        id: collectionJSON.id,
+        name: collectionJSON.name,
+        description: collectionJSON.description,
+        owner: collectionJSON.owner,
+        items: collectionJSON.items,
+        reviews: collectionJSON.reviews
+      }));
+  }
+}
