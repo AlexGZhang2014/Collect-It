@@ -37,3 +37,16 @@ export function addItem(state) {
       }));
   }
 }
+
+export function deleteItem(id) {
+  return dispatch => {
+    dispatch({ type: 'DELETING_ITEM' });
+    if (window.confirm("Are you sure?")) {
+      fetch('/api/v1/items/' + id, { method: 'DELETE' })
+        .then(response => dispatch({
+          type: 'DELETED_ITEM',
+          id: id
+        }))
+    }
+  }
+}
