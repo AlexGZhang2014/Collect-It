@@ -34,3 +34,16 @@ export function addCollection(state) {
       }));
   }
 }
+
+export function deleteCollection(id) {
+  return dispatch => {
+    dispatch({ type: 'DELETING_COLLECTION' });
+    if (window.confirm("Are you sure?")) {
+      fetch('/api/v1/collections/' + id, { method: 'DELETE' })
+        .then(response => dispatch({
+          type: 'DELETED_COLLECTION',
+          id: id
+        }))
+    }
+  }
+}
