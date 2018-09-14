@@ -14,7 +14,7 @@ class CollectionsContainer extends Component {
     return (
       <div className="collections-container">
         <h1>Your Collections Feed!</h1>
-        <AddCollectionForm />
+        <AddCollectionForm addCollection={this.props.addCollection} />
         <Collections collections={this.props.collections}/>
       </div>
     )
