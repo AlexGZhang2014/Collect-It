@@ -17,6 +17,12 @@ export default function reviewsReducer(state = {
         reviews: [...state.reviews, review]
       }
 
+    case 'DELETED_REVIEW':
+      return {
+        ...state,
+        reviews: state.reviews.filter(review => review.id !== action.id)
+      }
+
     default:
       return state;
   }
