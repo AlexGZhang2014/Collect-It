@@ -28,7 +28,6 @@ class EditCollectionForm extends Component {
       <div className="edit-collection-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your collection here!</h2>
-          <br />
           <label>Your Collection Title:</label>
           <br />
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />

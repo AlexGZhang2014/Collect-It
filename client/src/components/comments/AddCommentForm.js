@@ -25,7 +25,6 @@ class AddCommentForm extends Component {
       <div className="new-comment-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Add your comment here!</h2>
-          <br />
           <label>Your Name:</label>
           <br />
           <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
