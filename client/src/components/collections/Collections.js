@@ -13,6 +13,7 @@ class Collections extends Component {
                 collection={collection}
                 key={collection.id}
                 updateCollection={this.props.updateCollection}
+                toggleEditOff={this.props.toggleEditOff}
                 />
             )
           } else {
@@ -20,7 +21,7 @@ class Collections extends Component {
               <Collection
                 key={collection.id}
                 collection={collection} deleteCollection={this.props.deleteCollection}
-                updateCollection={this.props.updateCollection}
+                toggleEditOn={this.props.toggleEditOn}
                 />
             )
           }
