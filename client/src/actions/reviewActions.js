@@ -54,3 +54,36 @@ export function deleteReview(id) {
     }
   }
 }
+
+export function updateReview(state) {
+  return dispatch => {
+    dispatch({ type: 'UPDATING_REVIEW'});
+
+    const editedReviewData = {
+      review: {
+        id: state.id,
+        title: state.title,
+        content: state.content,
+        author: state.author,
+        rating: state.rating,
+        collection_id: state.collection.id
+      }
+    }
+
+    fetch('/api/v1/reviews/' + state.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(editedReviewData)
+    })
+      .then(response => response.json())
+      .then(reviewJSON => dispatch({
+        type: 'UPDATED_REVIEW',
+        id: reviewJSON.id,
+        title: reviewJSON.title,
+        content: reviewJSON.content,
+        author: reviewJSON.author,
+        rating: reviewJSON.rating,
+        collection: reviewJSON.collection
+      }));
+  }
+}
