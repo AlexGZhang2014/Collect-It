@@ -3,10 +3,19 @@ import Item from './Item'
 
 class Items extends Component {
   render() {
-    const items = this.props.items.map(item => <Item key={item.id} item={item} />)
-
     return (
-      <div className="items">{ items }</div>
+      <div className="items">
+        {this.props.items.map(item => {
+          if (item.collection && this.props.collection && item.collection.id === this.props.collection.id) {
+            return (
+              <Item
+                key={item.id}
+                item={item}
+                />
+            );
+          }
+        })}
+      </div>
     )
   }
 }
