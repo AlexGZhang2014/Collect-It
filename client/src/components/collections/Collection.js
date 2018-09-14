@@ -11,6 +11,7 @@ class Collection extends Component {
         <h2>{collection.name}</h2>
         <h4>Owner: {collection.owner}</h4>
         <p>{collection.description}</p>
+        <button onClick={() => this.props.deleteCollection(collection.id)}>Delete this collection</button>
         <ItemsContainer collection={collection} />
         <ReviewsContainer collection={collection} />
       </div>
