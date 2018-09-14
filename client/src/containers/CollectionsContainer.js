@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Collections from '../components/collections/Collections'
 import { fetchCollections, addCollection, deleteCollection, updateCollection } from '../actions/collectionActions'
+import { addReview } from '../actions/reviewActions'
 import AddCollectionForm from '../components/collections/AddCollectionForm'
 
 class CollectionsContainer extends Component {
@@ -36,6 +37,7 @@ class CollectionsContainer extends Component {
         <Collections
           collections={this.props.collections} deleteCollection={this.props.deleteCollection}
           updateCollection={this.props.updateCollection}
+          addReview={this.props.addReview}
           toggleEditOn={this.toggleEditOn}
           toggleEditOff={this.toggleEditOff}
           editCollectionId={this.state.editCollectionId}
@@ -53,7 +55,8 @@ const mapDispatchToProps = dispatch => ({
   fetchCollections: () => dispatch(fetchCollections()),
   addCollection: state => dispatch(addCollection(state)),
   deleteCollection: state => dispatch(deleteCollection(state)),
-  updateCollection: state => dispatch(updateCollection(state))
+  updateCollection: state => dispatch(updateCollection(state)),
+  addReview: state => dispatch(addReview(state))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CollectionsContainer)
