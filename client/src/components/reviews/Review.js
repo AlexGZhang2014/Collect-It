@@ -8,7 +8,7 @@ const Review = props => {
   return (
     <div className="review">
       <h4>{props.review.author} wrote: (<Moment date={props.review.created_at} fromNow />)</h4>
-      <p><strong>{props.review.rating} {stars}</strong></p>
+      <p><strong>{props.review.title} - {props.review.rating} {stars}</strong></p>
       <p>{props.review.content}</p>
     </div>
   )
