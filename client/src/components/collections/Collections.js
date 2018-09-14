@@ -3,7 +3,7 @@ import Collection from './Collection'
 
 class Collections extends Component {
   render() {
-    const collections = this.props.collections.map(collection => <Collection key={collection.id} collection={collection} />)
+    const collections = this.props.collections.map(collection => <Collection key={collection.id} collection={collection} deleteCollection={this.props.deleteCollection} />)
 
     return (
       <div className="collections">
