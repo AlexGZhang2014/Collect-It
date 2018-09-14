@@ -22,6 +22,7 @@ class Collections extends Component {
                 key={collection.id}
                 collection={collection} deleteCollection={this.props.deleteCollection}
                 toggleEditOn={this.props.toggleEditOn}
+                addReview={this.props.addReview}
                 />
             )
           }
