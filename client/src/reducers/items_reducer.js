@@ -17,7 +17,7 @@ export default function itemReducer(state = {
         items: [...state.items, item]
       }
 
-    case 'DELETED_REVIEW':
+    case 'DELETED_ITEM':
       return {
         ...state,
         items: state.items.filter(item => item.id !== action.id)
