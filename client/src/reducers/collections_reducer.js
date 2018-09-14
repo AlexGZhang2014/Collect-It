@@ -4,8 +4,6 @@ export const cuidFn = cuid;
 export default function collectionsReducer(state = {
   loading: false,
   collections: [],
-  items: [],
-  reviews: []
 }, action) {
   switch (action.type) {
     case 'LOADING_COLLECTIONS':
@@ -13,6 +11,14 @@ export default function collectionsReducer(state = {
 
     case 'FETCH_COLLECTIONS':
       return { loading: false, collections: action.payload }
+
+    case 'ADDED_COLLECTION':
+      const collection = { id: action.id, name: action.name, description: action.description, owner: action.owner, items: [], reviews: [] };
+
+      return {
+        ...state,
+        collections: [...state.collections, collection]
+      }
 
     default:
       return state;
