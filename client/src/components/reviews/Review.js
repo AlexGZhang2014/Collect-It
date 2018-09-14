@@ -10,6 +10,8 @@ const Review = props => {
       <h4>{props.review.author} wrote: (<Moment date={props.review.created_at} fromNow />)</h4>
       <p><strong>{props.review.title} - {props.review.rating} {stars}</strong></p>
       <p>{props.review.content}</p>
+      <h6>Last updated: <Moment date={props.review.updated_at} fromNow /></h6>
+      <button onClick={() => props.toggleEditOn(props.review.id)}>Edit this review</button>
       <button onClick={() => props.deleteReview(props.review.id)}>Delete this review</button>
     </div>
   )
