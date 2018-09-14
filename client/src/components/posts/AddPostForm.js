@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class NewPostForm extends Component {
+class AddPostForm extends Component {
   state = {
     title: '',
     content: '',
@@ -28,7 +28,6 @@ class NewPostForm extends Component {
       <div className="new-post-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Create a new post here!</h2>
-          <br />
           <label>Your Post Title:</label>
           <br />
           <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
@@ -48,4 +47,4 @@ class NewPostForm extends Component {
   }
 }
 
-export default NewPostForm
+export default AddPostForm
