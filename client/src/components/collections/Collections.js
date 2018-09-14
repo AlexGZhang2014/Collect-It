@@ -11,7 +11,7 @@ class Collections extends Component {
         {this.props.collections.map(collection => {
           if (this.props.editCollectionId === collection.id) {
             return (
-              <React.Fragment>
+              <Fragment>
                 <EditCollectionForm
                   collection={collection}
                   key={collection.id}
@@ -20,7 +20,7 @@ class Collections extends Component {
                   />
                 <ItemsContainer collection={collection} />
                 <ReviewsContainer collection={collection} />
-              </React.Fragment>
+              </Fragment>
             )
           } else {
             return (
