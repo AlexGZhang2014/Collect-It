@@ -3,10 +3,19 @@ import Review from './Review'
 
 class Reviews extends Component {
   render() {
-    const reviews = this.props.reviews.map(review => <Review key={review.id} review={review} />)
-
     return (
-      <div className="reviews">{ reviews }</div>
+      <div className="reviews">
+        {this.props.reviews.map(review => {
+          if (review.collection && this.props.collection && review.collection.id === this.props.collection.id) {
+            return (
+              <Review
+                key={review.id}
+                review={review}
+                />
+            )
+          }
+        })}
+      </div>
     )
   }
 }
