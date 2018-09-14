@@ -70,7 +70,7 @@ export function updateCollection(state) {
     })
       .then(response => response.json())
       .then(collectionJSON => dispatch({
-        type: 'UPDATED_POST',
+        type: 'UPDATED_COLLECTION',
         id: collectionJSON.id,
         name: collectionJSON.name,
         description: collectionJSON.description,
