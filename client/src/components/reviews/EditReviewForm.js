@@ -27,7 +27,7 @@ class EditReviewForm extends Component {
     return (
       <div className="edit-review-form" onSubmit={this.handleSubmit}>
         <form>
-          <h2>Add your review here!</h2>
+          <h2>Edit your review</h2>
           <label>Your Review Title:</label>
           <br />
           <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
@@ -44,7 +44,7 @@ class EditReviewForm extends Component {
           <br />
           <input type="number" name="rating" value={this.state.rating} onChange={this.handleChange} />
           <br />
-          <input type="submit" value="Add review"/>
+          <input type="submit" value="Update review"/>
         </form>
       </div>
     )
