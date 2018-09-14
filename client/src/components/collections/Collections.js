@@ -18,7 +18,10 @@ class Collections extends Component {
                   updateCollection={this.props.updateCollection}
                   toggleEditOff={this.props.toggleEditOff}
                   />
-                <ItemsContainer collection={collection} />
+                <ItemsContainer
+                  collection={collection}
+                  editCollectionId={this.props.editCollectionId}
+                  />
                 <ReviewsContainer collection={collection} />
               </Fragment>
             )
