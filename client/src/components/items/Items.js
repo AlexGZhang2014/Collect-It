@@ -11,6 +11,7 @@ class Items extends Component {
               <Item
                 key={item.id}
                 item={item}
+                deleteItem={this.props.deleteItem}
                 />
             );
           }
