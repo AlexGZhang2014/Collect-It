@@ -8,5 +8,8 @@ export default function itemReducer(state = {
 
     case 'FETCH_ITEMS':
       return { loading: false, items: action.payload }
+
+    default:
+      return state;
   }
 }
