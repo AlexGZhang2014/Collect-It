@@ -5,6 +5,24 @@ import { fetchCollections, addCollection, deleteCollection, updateCollection } f
 import AddCollectionForm from '../components/collections/AddCollectionForm'
 
 class CollectionsContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editCollectionId: null
+    }
+  }
+
+  toggleEditOn = id => {
+    this.setState({
+      editCollectionId: id
+    })
+  }
+
+  toggleEditOff = () => {
+    this.setState({
+      editCollectionId: null
+    })
+  }
 
   componentDidMount() {
     this.props.fetchCollections()
@@ -18,6 +36,9 @@ class CollectionsContainer extends Component {
         <Collections
           collections={this.props.collections} deleteCollection={this.props.deleteCollection}
           updateCollection={this.props.updateCollection}
+          toggleEditOn={this.toggleEditOn}
+          toggleEditOff={this.toggleEditOff}
+          editCollectionId={this.state.editCollectionId}
           />
       </div>
     )
