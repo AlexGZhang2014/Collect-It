@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Items from '../components/items/Items'
-import { fetchItems, addItem } from '../actions/itemActions'
+import { fetchItems, addItem, deleteItem } from '../actions/itemActions'
 import AddItemForm from '../components/items/AddItemForm'
 import { connect } from 'react-redux'
 
@@ -57,6 +57,7 @@ class ItemsContainer extends Component {
         <Items
           items={this.props.items}
           collection={this.props.collection}
+          deleteItem={this.props.deleteItem}
           />
       </div>
     )
@@ -69,7 +70,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchItems: () => dispatch(fetchItems()),
-  addItem: state => dispatch(addItem(state))
+  addItem: state => dispatch(addItem(state)),
+  deleteItem: id => dispatch(deleteItem(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer)
