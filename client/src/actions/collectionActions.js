@@ -1,4 +1,4 @@
-export default function fetchCollections() {
+export function fetchCollections() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_COLLECTIONS' });
     return fetch('/api/v1/collections.json')
