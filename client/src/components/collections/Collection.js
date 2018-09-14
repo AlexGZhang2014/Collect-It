@@ -13,6 +13,8 @@ class Collection extends Component {
         <h2>{collection.name}</h2>
         <h4>Owner: {collection.owner} (Created <Moment date={collection.created_at} fromNow />)</h4>
         <p>{collection.description}</p>
+        <h6>Last updated: <Moment date={collection.updated_at} fromNow /></h6>
+        <button onClick={() => this.props.toggleEditOn(collection.id)}>Edit this collection</button>
         <button onClick={() => this.props.deleteCollection(collection.id)}>Delete this collection</button>
         <ItemsContainer collection={collection} />
         <ReviewsContainer collection={collection} />
