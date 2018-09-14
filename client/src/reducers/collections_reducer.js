@@ -20,6 +20,12 @@ export default function collectionsReducer(state = {
         collections: [...state.collections, collection]
       }
 
+    case 'DELETED_COLLECTION':
+      return {
+        ...state,
+        collections: state.collections.filter(collection => collection.id !== action.id)
+      }
+
     default:
       return state;
   }
