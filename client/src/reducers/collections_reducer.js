@@ -26,6 +26,28 @@ export default function collectionsReducer(state = {
         collections: state.collections.filter(collection => collection.id !== action.id)
       }
 
+    case 'UPDATED_COLLECTION':
+      const editedCollection = {
+        id: action.id,
+        name: action.name,
+        description: action.description,
+        owner: action.owner,
+        items: action.items,
+        reviews: action.reviews
+      };
+
+      let newState = {
+        ...state,
+        collections: state.collections.map(collection => {
+          if (collection.id !== action.id) {
+            return collection;
+          }
+          return editedCollection;
+        })
+      };
+
+      return newState;
+
     default:
       return state;
   }
