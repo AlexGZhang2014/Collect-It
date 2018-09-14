@@ -4,9 +4,9 @@ import { fetchItems } from '../actions/itemActions'
 import { connect } from 'react-redux'
 
 class ItemsContainer extends Component {
-  trueStatement = (statement) => {
-    if (statement) {
-      return <button>BUTTON</button>
+  toggleAddItemButton = (editCollectionId) => {
+    if (editCollectionId) {
+      return <button>Add Item</button>
     }
   }
 
@@ -18,7 +18,7 @@ class ItemsContainer extends Component {
     return (
       <div className="items-container">
         <h3>Items:</h3>
-        {this.trueStatement(true)}
+        {this.toggleAddItemButton(this.props.editCollectionId)}
         <Items
           items={this.props.items}
           collection={this.props.collection}
