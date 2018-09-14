@@ -19,6 +19,7 @@ export function addReview(state) {
         title: state.title,
         content: state.content,
         author: state.author,
+        rating: state.rating,
         collection_id: state.collectionId
       }
     }
@@ -35,6 +36,7 @@ export function addReview(state) {
         title: reviewJSON.title,
         content: reviewJSON.content,
         author: reviewJSON.author,
+        rating: reviewJSON.rating,
         collection: reviewJSON.collection
       }));
   }
