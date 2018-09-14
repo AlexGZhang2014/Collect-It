@@ -52,7 +52,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchComments: () => dispatch(fetchComments()),
   deleteComment: id => dispatch(deleteComment(id)),
-  updateComment: id => dispatch(updateComment(id))
+  updateComment: state => dispatch(updateComment(state))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer)
