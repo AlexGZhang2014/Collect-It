@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Reviews from '../components/reviews/Reviews'
-import { fetchReviews } from '../actions/reviewActions'
+import { fetchReviews, deleteReview } from '../actions/reviewActions'
 import { connect } from 'react-redux'
 
 class ReviewsContainer extends Component {
@@ -16,6 +16,7 @@ class ReviewsContainer extends Component {
         <Reviews
           reviews={this.props.reviews}
           collection={this.props.collection}
+          deleteReview={this.props.deleteReview}
           />
       </div>
     )
@@ -27,7 +28,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchReviews: () => dispatch(fetchReviews())
+  fetchReviews: () => dispatch(fetchReviews()),
+  deleteReview: id => dispatch(deleteReview(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer)
