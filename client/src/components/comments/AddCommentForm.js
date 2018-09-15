@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Input from '@material-ui/core/Input'
 
 class AddCommentForm extends Component {
   state = {
@@ -25,15 +27,11 @@ class AddCommentForm extends Component {
       <div className="new-comment-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Add your comment here!</h2>
-          <label>Your Name:</label>
+          <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
+          <TextField required multiline rowsMax="8" name="content" label="Your Comment" value={this.state.content} onChange={this.handleChange} />
           <br />
-          <label>Your Comment:</label>
-          <br />
-          <textarea name="content" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Add comment"/>
+          <Input type="submit" className="submit" value="Add comment"/>
         </form>
       </div>
     )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Input from '@material-ui/core/Input'
 
 class EditPostForm extends Component {
   state = {
@@ -27,19 +29,13 @@ class EditPostForm extends Component {
       <div className="edit-post-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your post here!</h2>
-          <label>Your Post Title:</label>
+          <TextField required name="title" label="Your Post Title" value={this.state.title} onChange={this.handleChange} />
           <br />
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+          <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <label>Your Name:</label>
+          <TextField required multiline rowsMax="8" name="content" label="Your Post Content" value={this.state.content} onChange={this.handleChange} />
           <br />
-          <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
-          <br />
-          <label>Your Post Content:</label>
-          <br />
-          <textarea name="content" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Update post"/>
+          <Input type="submit" className="submit" value="Update post"/>
         </form>
       </div>
     )
