@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class AddCollectionForm extends Component {
   state = {
@@ -28,19 +30,13 @@ class AddCollectionForm extends Component {
       <div className="new-collection-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Create a new collection here!</h2>
-          <label>Your Collection Name:</label>
+          <TextField required name="name" label="Collection Name" value={this.state.title} onChange={this.handleChange} />
           <br />
-          <input type="text" name="name" value={this.state.title} onChange={this.handleChange} />
+          <TextField required name="owner" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <label>Your Name:</label>
-          <br />
-          <input type="text" name="owner" value={this.state.author} onChange={this.handleChange} />
-          <br />
-          <label>Your Collection Description:</label>
-          <br />
-          <textarea name="description" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Create collection"/>
+          <TextField required multiline rowsMax="8" name="description" label="Collection Description" value={this.state.content} onChange={this.handleChange} />
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Create collection</Button>
         </form>
       </div>
     )

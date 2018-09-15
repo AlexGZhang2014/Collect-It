@@ -4,6 +4,7 @@ import ReviewsContainer from '../../containers/ReviewsContainer.js'
 import Moment from 'react-moment'
 import 'moment-timezone'
 import AddReviewForm from '../reviews/AddReviewForm'
+import Button from '@material-ui/core/Button'
 
 class Collection extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Collection extends Component {
   render() {
     const collection = this.props.collection
 
-    const buttonOrForm = () => !this.state.addReviewStatus ? <button onClick={this.toggleAddReview}>Add a review</button> : <AddReviewForm collection={collection} toggleAddReview={this.toggleAddReview} addReview={this.props.addReview}/>
+    const buttonOrForm = () => !this.state.addReviewStatus ? <Button variant="contained" color="primary" onClick={this.toggleAddReview}>Add a review</Button> : <AddReviewForm collection={collection} toggleAddReview={this.toggleAddReview} addReview={this.props.addReview}/>
 
     return (
       <div className="collection">
@@ -30,8 +31,8 @@ class Collection extends Component {
         <h4>Owner: {collection.owner} (Created <Moment date={collection.created_at} fromNow />)</h4>
         <p>{collection.description}</p>
         <h6>Last updated: <Moment date={collection.updated_at} fromNow /></h6>
-        <button onClick={() => this.props.toggleEditOn(collection.id)}>Edit this collection</button>
-        <button onClick={() => this.props.deleteCollection(collection.id)}>Delete this collection</button>
+        <Button variant="contained" color="primary" onClick={() => this.props.toggleEditOn(collection.id)}>Edit this collection</Button>
+        <Button variant="contained" color="secondary" onClick={() => this.props.deleteCollection(collection.id)}>Delete this collection</Button>
         {buttonOrForm()}
         <ItemsContainer collection={collection} />
         <ReviewsContainer collection={collection} />

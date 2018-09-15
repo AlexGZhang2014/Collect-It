@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class EditCollectionForm extends Component {
   state = {
@@ -28,19 +30,13 @@ class EditCollectionForm extends Component {
       <div className="edit-collection-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your collection here!</h2>
-          <label>Your Collection Title:</label>
+          <TextField required name="name" label="Collection Title" value={this.state.name} onChange={this.handleChange} />
           <br />
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+          <TextField required name="owner" label="Your Name" value={this.state.owner} onChange={this.handleChange} />
           <br />
-          <label>Your Name:</label>
-          <br />
-          <input type="text" name="owner" value={this.state.owner} onChange={this.handleChange} />
-          <br />
-          <label>Your Collection Description:</label>
-          <br />
-          <textarea name="description" value={this.state.description} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Update collection"/>
+          <TextField required name="description" label="Collection Description" value={this.state.description} onChange={this.handleChange} />
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Update collection</Button>
         </form>
       </div>
     )
