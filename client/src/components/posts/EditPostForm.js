@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
-import Input from '@material-ui/core/Input'
+import Button from '@material-ui/core/Button'
 
 class EditPostForm extends Component {
   state = {
@@ -34,8 +34,8 @@ class EditPostForm extends Component {
           <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
           <TextField required multiline rowsMax="8" name="content" label="Your Post Content" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <Input type="submit" className="submit" value="Update post"/>
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Update post</Button>
         </form>
       </div>
     )

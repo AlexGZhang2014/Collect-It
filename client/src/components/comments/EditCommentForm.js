@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class EditCommentForm extends Component {
   state = {
@@ -26,15 +28,11 @@ class EditCommentForm extends Component {
       <div className="edit-comment-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your comment here!</h2>
-          <label>Your Name:</label>
+          <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
-          <br />
-          <label>Your Comment:</label>
-          <br />
-          <textarea name="content" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Update comment"/>
+          <TextField required multiline rowsMax="8" name="content" label="Your Comment" value={this.state.content} onChange={this.handleChange} />
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Update comment</Button>
         </form>
       </div>
     )
