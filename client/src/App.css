@@ -17,6 +17,12 @@
   border: 5px solid #795548;
 }
 
+.edit-collection-form {
+  background-color: #2979FF;
+  padding: 20px;
+  border: 5px solid #795548;
+}
+
 .items-container {
   background-color: #E040FB;
   width: 100%;
@@ -38,22 +44,20 @@
   background-color: #2979FF;
   height: 80px;
   padding: 20px;
+  width: 100%;
   color: #4A148C;
 }
 
 .navbar {
   text-align: left;
+  font-size: 1.2em;
 }
 
 .App-title {
   font-size: 2.0em;
+  width: 100%;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
