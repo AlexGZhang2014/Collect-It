@@ -4,6 +4,10 @@
   align-content: stretch;
 }
 
+.submit {
+  background-color: #FFEB3B;
+}
+
 .posts-container {
   width: 100%;
 }

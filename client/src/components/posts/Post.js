@@ -3,6 +3,7 @@ import CommentsContainer from '../../containers/CommentsContainer'
 import Moment from 'react-moment'
 import 'moment-timezone'
 import AddCommentForm from '../comments/AddCommentForm'
+import Button from '@material-ui/core/Button'
 
 class Post extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Post extends Component {
   render() {
     const post = this.props.post
 
-    const buttonOrForm = () => !this.state.addCommentStatus ? <button onClick={this.toggleAddComment}>Add a comment</button> : <AddCommentForm post={post} toggleAddComment={this.toggleAddComment} addComment={this.props.addComment}/>
+    const buttonOrForm = () => !this.state.addCommentStatus ? <Button variant="contained" color="primary" onClick={this.toggleAddComment}>Add a comment</Button> : <AddCommentForm post={post} toggleAddComment={this.toggleAddComment} addComment={this.props.addComment}/>
 
     return (
       <div className="post">
@@ -29,8 +30,8 @@ class Post extends Component {
         <h4>Written by: {post.author} (<Moment date={post.created_at} fromNow />)</h4>
         <p className="post-content">{post.content}</p>
         <h6>Last updated: <Moment date={post.updated_at} fromNow /></h6>
-        <button onClick={() => this.props.toggleEditOn(post.id)}>Edit this post</button>
-        <button onClick={() => this.props.deletePost(post.id)}>Delete this post</button>
+        <Button variant="contained" color="primary" onClick={() => this.props.toggleEditOn(post.id)}>Edit this post</Button>
+        <Button variant="contained" color="secondary" onClick={() => this.props.deletePost(post.id)}>Delete this post</Button>
         {buttonOrForm()}
         <CommentsContainer post={post}/>
       </div>
