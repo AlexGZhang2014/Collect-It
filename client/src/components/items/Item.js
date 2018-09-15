@@ -16,7 +16,7 @@ class Item extends Component {
   renderEditButton = () => {
     if (this.props.editCollectionId) {
       return (
-        <button>Edit this item</button>
+        <button onClick={() => this.props.toggleEditOn(this.props.item.id)}>Edit this item</button>
       )
     } else {
       return null;
@@ -28,8 +28,9 @@ class Item extends Component {
       <div className="item">
         <h4>{this.props.item.name} (Added: <Moment date={this.props.item.created_at} fromNow />)</h4>
         <p>{this.props.item.description}</p>
-        {this.renderDeleteButton()}
+        <h6>Last updated: <Moment date={this.props.item.updated_at} fromNow /></h6>
         {this.renderEditButton()}
+        {this.renderDeleteButton()}
       </div>
     )
   }
