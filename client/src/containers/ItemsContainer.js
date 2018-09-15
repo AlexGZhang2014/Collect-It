@@ -3,6 +3,7 @@ import Items from '../components/items/Items'
 import { fetchItems, addItem, deleteItem, updateItem } from '../actions/itemActions'
 import AddItemForm from '../components/items/AddItemForm'
 import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button'
 
 class ItemsContainer extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class ItemsContainer extends Component {
     if (this.props.editCollectionId) {
       return (
         <Fragment>
-          <button onClick={this.toggleAddItem}>Add a new item</button>
+          <Button variant="contained" color="primary" onClick={this.toggleAddItem}>Add a new item</Button>
           <p>Click "Update collection" when you are done adding, deleting, and editing items!</p>
         </Fragment>
       )

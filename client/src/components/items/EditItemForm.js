@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class EditItemForm extends Component {
   state = {
@@ -26,15 +28,11 @@ class EditItemForm extends Component {
       <div className="edit-item-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your item</h2>
-          <label>Your Item Name:</label>
+          <TextField required name="name" label="Item Name" value={this.state.name} onChange={this.handleChange} />
           <br />
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
-          <br />
-          <label>Your Item Description:</label>
-          <br />
-          <textarea name="description" value={this.state.description} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Update item"/>
+          <TextField required name="description" label="Item Description" value={this.state.description} onChange={this.handleChange} />
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Update Item</Button>
         </form>
       </div>
     )

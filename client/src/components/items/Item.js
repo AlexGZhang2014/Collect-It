@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Moment from 'react-moment'
 import 'moment-timezone'
+import Button from '@material-ui/core/Button'
 
 class Item extends Component {
   renderDeleteButton = () => {
     if (this.props.editCollectionId) {
       return (
-        <button onClick={() => this.props.deleteItem(this.props.item.id)}>Delete this item</button>
+        <Button variant="contained" color="secondary" onClick={() => this.props.deleteItem(this.props.item.id)}>Delete this item</Button>
       )
     } else {
       return null;
@@ -16,7 +17,7 @@ class Item extends Component {
   renderEditButton = () => {
     if (this.props.editCollectionId) {
       return (
-        <button onClick={() => this.props.toggleEditOn(this.props.item.id)}>Edit this item</button>
+        <Button variant="contained" color="primary" onClick={() => this.props.toggleEditOn(this.props.item.id)}>Edit this item</Button>
       )
     } else {
       return null;

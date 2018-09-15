@@ -124,6 +124,12 @@
   width: 100%;
 }
 
+.edit-item-form {
+  background-color: #CDDC39;
+  border: 5px solid #4DD0E1;
+  width: 100%;
+}
+
 .reviews-container {
   background-color: #ff9800;
   width: 100%;
