@@ -25,9 +25,9 @@ class Post extends Component {
 
     return (
       <div className="post">
-        <h2>{post.title}</h2>
+        <h2 className="post-title">{post.title}</h2>
         <h4>Written by: {post.author} (<Moment date={post.created_at} fromNow />)</h4>
-        <p>{post.content}</p>
+        <p className="post-content">{post.content}</p>
         <h6>Last updated: <Moment date={post.updated_at} fromNow /></h6>
         <button onClick={() => this.props.toggleEditOn(post.id)}>Edit this post</button>
         <button onClick={() => this.props.deletePost(post.id)}>Delete this post</button>

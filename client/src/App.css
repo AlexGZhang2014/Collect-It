@@ -28,6 +28,16 @@
   border: 5px solid #1c2566;
 }
 
+.post-title {
+  border: 5px solid #f57c00;
+  background-color: #ffff33;
+}
+
+.post-content {
+  border: 5px solid #42a5f5;
+  background-color: #87f3be;
+}
+
 .edit-post-form {
   background-color: #ffb300;
   padding: 20px;
@@ -49,6 +59,12 @@
   background-color: #1565c0;
   padding: 10px;
   border: 2px solid #ffa533;
+}
+
+.new-comment-form {
+  background-color: #51d1e1;
+  border: 5px solid #949d3c;
+  width: 100%;
 }
 
 .collections-container {
@@ -93,9 +109,15 @@
 }
 
 .item {
-  background-color: #009688;
+  background-color: #26a69a;
   padding: 10px;
   border: 2px solid #ef5350;
+}
+
+.new-item-form {
+  background-color: #35baf6;
+  border: 5px solid #205723;
+  width: 100%;
 }
 
 .reviews-container {
@@ -115,12 +137,19 @@
   border: 2px solid #388e3c;
 }
 
+.new-review-form {
+  background-color: #ed4b82;
+  border: 5px solid #76ff03;
+  width: 100%;
+}
+
 .App-header {
   background-color: #2979FF;
   height: 80px;
   padding: 20px;
   width: 100%;
   color: #4A148C;
+  border: 5px solid #b2102f;
 }
 
 .navbar {
@@ -131,6 +160,8 @@
 .App-title {
   font-size: 2.0em;
   width: 100%;
+  border: 5px solid #00e676;
+  background-color: #33eaff;
 }
 
 .App-intro {
