@@ -23,6 +23,26 @@ export default function itemReducer(state = {
         items: state.items.filter(item => item.id !== action.id)
       }
 
+    case 'UPDATED_ITEM':
+      const editedItem = {
+        id: action.id,
+        name: action.name,
+        description: action.description,
+        collection: action.collection
+      };
+
+      let newState = {
+        ...state,
+        items: state.items.map(item => {
+          if (item.id !== action.id) {
+            return item;
+          }
+          return editedItem;
+        })
+      };
+
+      return newState;
+
     default:
       return state;
   }
