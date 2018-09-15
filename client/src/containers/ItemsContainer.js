@@ -36,7 +36,7 @@ class ItemsContainer extends Component {
       return (
         <Fragment>
           <button onClick={this.toggleAddItem}>Add a new item</button>
-          <p>Click "Update collection" when you are done adding and updating items!</p>
+          <p>Click "Update collection" when you are done adding, deleting, and editing items!</p>
         </Fragment>
       )
     } else {
@@ -58,6 +58,7 @@ class ItemsContainer extends Component {
           items={this.props.items}
           collection={this.props.collection}
           deleteItem={this.props.deleteItem}
+          editCollectionId={this.props.editCollectionId}
           />
       </div>
     )
