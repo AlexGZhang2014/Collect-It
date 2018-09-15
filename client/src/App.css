@@ -1,6 +1,17 @@
 .App {
   display: grid;
   text-align: center;
+  align-content: stretch;
+}
+
+.collections-container {
+  width: 100%;
+}
+
+.new-collection-form {
+  background-color: #81d4fa;
+  border: 5px solid #d32f2f;
+  width: 100%;
 }
 
 .collections {
@@ -26,18 +37,35 @@
 .items-container {
   background-color: #E040FB;
   width: 100%;
-  padding: 2px;
+  border: 5px solid #ffe082;
 }
 
 .items {
-  background-color: #c4a6f9;
+  background-color: #381f75;
   padding: 5px;
 }
 
 .item {
   background-color: #009688;
   padding: 10px;
-  border: 2px solid #FFF9C4;
+  border: 2px solid #ef5350;
+}
+
+.reviews-container {
+  background-color: #ff9800;
+  width: 100%;
+  border: 5px solid #c2185b;
+}
+
+.reviews {
+  background-color: #512da8;
+  padding: 5px;
+}
+
+.review {
+  background-color: #fdd835;
+  padding: 10px;
+  border: 2px solid #388e3c;
 }
 
 .App-header {
