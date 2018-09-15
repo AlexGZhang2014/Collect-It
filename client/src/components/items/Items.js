@@ -12,6 +12,7 @@ class Items extends Component {
                 key={item.id}
                 item={item}
                 deleteItem={this.props.deleteItem}
+                updateItem={this.props.updateItem}
                 editCollectionId={this.props.editCollectionId}
                 />
             );
