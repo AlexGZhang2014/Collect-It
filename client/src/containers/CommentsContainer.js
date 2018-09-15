@@ -29,7 +29,7 @@ class CommentsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="comments-container">
         <h3>Comments:</h3>
         <Comments
           comments={this.props.comments}
