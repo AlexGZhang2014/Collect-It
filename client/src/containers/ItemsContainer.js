@@ -8,12 +8,28 @@ class ItemsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addItemStatus: false
+      addItemStatus: false,
+      editItemId: null
     }
+  }
+
+  toggleEditOn = id => {
+    this.setState({
+      ...this.state,
+      editItemId: id
+    })
+  }
+
+  toggleEditOff = () => {
+    this.setState({
+      ...this.state,
+      editItemId: null
+    })
   }
 
   toggleAddItem = () => {
     this.setState({
+      ...this.state,
       addItemStatus: !this.state.addItemStatus
     });
     this.renderAddItemForm();
@@ -60,6 +76,9 @@ class ItemsContainer extends Component {
           deleteItem={this.props.deleteItem}
           updateItem={this.props.updateItem}
           editCollectionId={this.props.editCollectionId}
+          toggleEditOn={this.toggleEditOn}
+          toggleEditOff={this.toggleEditOff}
+          editItemId={this.state.editItemId}
           />
       </div>
     )
