@@ -1,17 +1,44 @@
 .App {
+  display: grid;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.collections {
+  padding: 20px;
+  width: 100%;
+  float: left;
+}
+
+.collection {
+  width: 45%;
+  float: left;
+  background-color: #2979FF;
+  padding: 20px;
+  border: 5px solid #795548;
+}
+
+.items-container {
+  background-color: #E040FB;
+  width: 100%;
+  padding: 2px;
+}
+
+.items {
+  background-color: #c4a6f9;
+  padding: 5px;
+}
+
+.item {
+  background-color: #009688;
+  padding: 10px;
+  border: 2px solid #FFF9C4;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #2979FF;
+  height: 80px;
   padding: 20px;
-  color: white;
+  color: #4A148C;
 }
 
 .navbar {
@@ -19,7 +46,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.0em;
 }
 
 .App-intro {
