@@ -1,7 +1,7 @@
 .App {
-  display: grid;
   text-align: center;
   align-content: stretch;
+  width: 100%;
 }
 
 .posts-container {
@@ -76,18 +76,19 @@
   background-color: #81d4fa;
   border: 5px solid #d32f2f;
   width: 100%;
-  padding: 20px;
 }
 
 .collections {
   width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 .collection {
-  width: 45%;
-  float: left;
+  flex: 1 1 auto;
+  width: 49%;
   background-color: #2979FF;
-  padding: 21px;
   border: 5px solid #795548;
 }
 
