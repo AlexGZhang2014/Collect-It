@@ -50,3 +50,32 @@ export function deleteItem(id) {
     }
   }
 }
+
+export function updateItem(state) {
+  return dispatch => {
+    dispatch({ type: 'UPDATING_ITEM'});
+
+    const editedItemData = {
+      item: {
+        id: state.id,
+        name: state.name,
+        description: state.description,
+        collection_id: state.collection.id
+      }
+    }
+
+    fetch('/api/v1/items/' + state.id, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(editedItemData)
+    })
+      .then(response => response.json())
+      .then(itemJSON => dispatch({
+        type: 'UPDATED_ITEM',
+        id: itemJSON.id,
+        name: itemJSON.name,
+        description: itemJSON.description,
+        collection: itemJSON.collection
+      }));
+  }
+}
