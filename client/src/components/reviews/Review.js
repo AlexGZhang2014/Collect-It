@@ -1,6 +1,7 @@
 import React from 'react'
 import Moment from 'react-moment'
 import 'moment-timezone'
+import Button from '@material-ui/core/Button'
 
 const Review = props => {
   const stars = props.review.rating > 1 ? "STARS" : "STAR"
@@ -11,8 +12,8 @@ const Review = props => {
       <p><strong>{props.review.title} - {props.review.rating} {stars}</strong></p>
       <p>{props.review.content}</p>
       <h6>Last updated: <Moment date={props.review.updated_at} fromNow /></h6>
-      <button onClick={() => props.toggleEditOn(props.review.id)}>Edit this review</button>
-      <button onClick={() => props.deleteReview(props.review.id)}>Delete this review</button>
+      <Button variant="contained" color="primary" onClick={() => props.toggleEditOn(props.review.id)}>Edit this review</Button>
+      <Button variant="contained" color="secondary" onClick={() => props.deleteReview(props.review.id)}>Delete this review</Button>
     </div>
   )
 }

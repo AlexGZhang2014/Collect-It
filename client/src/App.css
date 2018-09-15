@@ -4,10 +4,6 @@
   align-content: stretch;
 }
 
-.submit {
-  background-color: #FFEB3B;
-}
-
 .posts-container {
   width: 100%;
 }
@@ -16,16 +12,11 @@
   background-color: #53c4f7;
   border: 5px solid #005f56;
   width: 100%;
-}
-
-.posts {
   padding: 20px;
-  width: 100%;
-  float: left;
 }
 
 .post {
-  width: 45%;
+  width: 100%;
   float: left;
   background-color: #ffee58;
   padding: 20px;
@@ -71,6 +62,12 @@
   width: 100%;
 }
 
+.edit-comment-form {
+  background-color: #FF4081;
+  border: 5px solid #0D47A1;
+  width: 100%;
+}
+
 .collections-container {
   width: 100%;
 }
@@ -79,26 +76,25 @@
   background-color: #81d4fa;
   border: 5px solid #d32f2f;
   width: 100%;
+  padding: 20px;
 }
 
 .collections {
-  padding: 20px;
   width: 100%;
-  float: left;
 }
 
 .collection {
   width: 45%;
   float: left;
   background-color: #2979FF;
-  padding: 20px;
+  padding: 21px;
   border: 5px solid #795548;
 }
 
 .edit-collection-form {
-  background-color: #2979FF;
+  background-color: #FF5722;
   padding: 20px;
-  border: 5px solid #795548;
+  border: 5px solid #00E676;
 }
 
 .items-container {
@@ -150,6 +146,12 @@
 .new-review-form {
   background-color: #ed4b82;
   border: 5px solid #76ff03;
+  width: 100%;
+}
+
+.edit-review-form {
+  background-color: #B2DFDB;
+  border: 5px solid #4FC3F7;
   width: 100%;
 }
 

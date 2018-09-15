@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class EditReviewForm extends Component {
   state = {
@@ -28,23 +30,15 @@ class EditReviewForm extends Component {
       <div className="edit-review-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Edit your review</h2>
-          <label>Your Review Title:</label>
+          <TextField required name="title" label="Your Review Title" value={this.state.title} onChange={this.handleChange} />
           <br />
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
+          <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <label>Your Name:</label>
+          <TextField required name="content" label="Your Review" value={this.state.content} onChange={this.handleChange} />
           <br />
-          <input type="text" name="author" value={this.state.author} onChange={this.handleChange} />
-          <br />
-          <label>Your Review:</label>
-          <br />
-          <textarea name="content" value={this.state.content} onChange={this.handleChange} />
-          <br />
-          <label>Your Rating:</label>
-          <br />
-          <input type="number" name="rating" value={this.state.rating} onChange={this.handleChange} />
-          <br />
-          <input type="submit" value="Update review"/>
+          <TextField type="number" name="rating" label="Your Rating" value={this.state.rating} onChange={this.handleChange} />
+          <br /><br />
+          <Button variant="contained" color="primary" type="submit">Update Review</Button>
         </form>
       </div>
     )

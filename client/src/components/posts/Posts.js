@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Post from './Post'
 import EditPostForm from './EditPostForm'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Posts extends Component {
 
@@ -10,12 +11,15 @@ class Posts extends Component {
         {this.props.posts.map(post => {
           if (this.props.editPostId === post.id) {
             return (
-              <EditPostForm
-                post={post}
-                key={post.id}
-                updatePost={this.props.updatePost}
-                toggleEditOff={this.props.toggleEditOff}
-                />
+              <Fragment>
+                <EditPostForm
+                  post={post}
+                  key={post.id}
+                  updatePost={this.props.updatePost}
+                  toggleEditOff={this.props.toggleEditOff}
+                  />
+                <CommentsContainer post={post}/>
+              </Fragment>
             )
           } else {
             return (
