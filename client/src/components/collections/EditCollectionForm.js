@@ -34,7 +34,7 @@ class EditCollectionForm extends Component {
           <br />
           <TextField required name="owner" label="Your Name" value={this.state.owner} onChange={this.handleChange} />
           <br />
-          <TextField required name="description" label="Collection Description" value={this.state.description} onChange={this.handleChange} />
+          <TextField required multiline rowsMax="8" name="description" label="Collection Description" value={this.state.description} onChange={this.handleChange} />
           <br /><br />
           <Button variant="contained" color="primary" type="submit">Update collection</Button>
         </form>

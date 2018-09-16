@@ -1,6 +1,3 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
-
 export default function collectionsReducer(state = {
   loading: false,
   collections: [],

@@ -27,7 +27,7 @@ class Collection extends Component {
 
     return (
       <div className="collection">
-        <h2>{collection.name}</h2>
+        <h2 className="collection-name">{collection.name}</h2>
         <h4>Owner: {collection.owner} (Created <Moment date={collection.created_at} fromNow />)</h4>
         <p>{collection.description}</p>
         <h6>Last updated: <Moment date={collection.updated_at} fromNow /></h6>

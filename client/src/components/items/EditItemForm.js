@@ -30,7 +30,7 @@ class EditItemForm extends Component {
           <h2>Edit your item</h2>
           <TextField required name="name" label="Item Name" value={this.state.name} onChange={this.handleChange} />
           <br />
-          <TextField required name="description" label="Item Description" value={this.state.description} onChange={this.handleChange} />
+          <TextField required multiline rowsMax="8" name="description" label="Item Description" value={this.state.description} onChange={this.handleChange} />
           <br /><br />
           <Button variant="contained" color="primary" type="submit">Update Item</Button>
         </form>

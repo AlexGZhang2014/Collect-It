@@ -34,7 +34,7 @@ class EditReviewForm extends Component {
           <br />
           <TextField required name="author" label="Your Name" value={this.state.author} onChange={this.handleChange} />
           <br />
-          <TextField required name="content" label="Your Review" value={this.state.content} onChange={this.handleChange} />
+          <TextField required multiline rowsMax="8" name="content" label="Your Review" value={this.state.content} onChange={this.handleChange} />
           <br />
           <TextField type="number" name="rating" label="Your Rating" value={this.state.rating} onChange={this.handleChange} />
           <br /><br />
