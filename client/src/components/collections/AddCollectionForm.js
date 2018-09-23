@@ -19,9 +19,9 @@ class AddCollectionForm extends Component {
     event.preventDefault();
     this.props.addCollection(this.state);
     this.setState({
-      title: '',
-      content: '',
-      author: ''
+      name: '',
+      description: '',
+      owner: ''
     });
   }
 
@@ -30,11 +30,11 @@ class AddCollectionForm extends Component {
       <div className="new-collection-form" onSubmit={this.handleSubmit}>
         <form>
           <h2>Create a new collection here!</h2>
-          <TextField required name="name" label="Collection Name" value={this.state.title} onChange={this.handleChange} />
+          <TextField required name="name" label="Collection Name" value={this.state.name} onChange={this.handleChange} />
           <br />
-          <TextField required name="owner" label="Your Name" value={this.state.author} onChange={this.handleChange} />
+          <TextField required name="owner" label="Your Name" value={this.state.owner} onChange={this.handleChange} />
           <br />
-          <TextField required multiline rowsMax="8" name="description" label="Collection Description" value={this.state.content} onChange={this.handleChange} />
+          <TextField required multiline rowsMax="8" name="description" label="Collection Description" value={this.state.description} onChange={this.handleChange} />
           <br /><br />
           <Button variant="contained" color="primary" type="submit">Create collection</Button>
         </form>
