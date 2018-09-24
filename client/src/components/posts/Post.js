@@ -9,13 +9,23 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addCommentStatus: false
+      addCommentStatus: false,
+      likes: 0
     }
   }
 
   toggleAddComment = () => {
     this.setState({
+      ...this.state,
       addCommentStatus: !this.state.addCommentStatus
+    })
+  }
+
+  increaseLikes = () => {
+    this.setState((prevState) =>{
+      return {
+        likes: prevState.likes + 1
+      }
     })
   }
 
@@ -30,9 +40,11 @@ class Post extends Component {
         <h4>Written by: {post.author} (<Moment date={post.created_at} fromNow />)</h4>
         <p className="post-content">{post.content}</p>
         <h6>Last updated: <Moment date={post.updated_at} fromNow /></h6>
+        <h1>{this.state.likes}</h1>
         <Button variant="contained" color="primary" onClick={() => this.props.toggleEditOn(post.id)}>Edit this post</Button>
         <Button variant="contained" color="secondary" onClick={() => this.props.deletePost(post.id)}>Delete this post</Button>
         {buttonOrForm()}
+        <Button variant="contained" color="primary" onClick={this.increaseLikes}>Like</Button>
         <CommentsContainer post={post}/>
       </div>
     );

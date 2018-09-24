@@ -25,13 +25,16 @@ export function addPost(state) {
       body: JSON.stringify(postData)
     })
       .then(response => response.json())
-      .then(postJSON => dispatch({
+      .then(postJSON => {
+
+        dispatch({
         type: "ADDED_POST",
         id: postJSON.id,
         title: postJSON.title,
         content: postJSON.content,
         author: postJSON.author
-      }));
+      })
+    });
   }
 }
 
