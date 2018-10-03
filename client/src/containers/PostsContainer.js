@@ -4,6 +4,7 @@ import Posts from '../components/posts/Posts'
 import { fetchPosts, addPost, deletePost, updatePost } from '../actions/postActions'
 import { addComment } from '../actions/commentActions'
 import AddPostForm from '../components/posts/AddPostForm'
+import { fetchLikes, addLike } from '../actions/likeActions'
 
 class PostsContainer extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class PostsContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts()
+    this.props.fetchPosts();
+    this.props.fetchLikes();
   }
 
   render() {
@@ -42,6 +44,8 @@ class PostsContainer extends Component {
           toggleEditOn={this.toggleEditOn}
           toggleEditOff={this.toggleEditOff}
           editPostId={this.state.editPostId}
+          addLike={this.props.addLike}
+          likes={this.props.likes}
           />
       </div>
     )
@@ -49,7 +53,8 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  posts: state.posts.posts
+  posts: state.posts.posts,
+  likes: state.likes.likes
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -57,7 +62,9 @@ const mapDispatchToProps = dispatch => ({
   addPost: state => dispatch(addPost(state)),
   deletePost: id => dispatch(deletePost(id)),
   updatePost: state => dispatch(updatePost(state)),
-  addComment: state => dispatch(addComment(state))
+  addComment: state => dispatch(addComment(state)),
+  fetchLikes: () => dispatch(fetchLikes()),
+  addLike: id => dispatch(addLike(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostsContainer)
