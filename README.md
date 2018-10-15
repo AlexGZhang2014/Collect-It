@@ -17,7 +17,7 @@
 
 Collect-It is a fully-functional app that incorporates a Rails API backend and a React/Redux frontend. Users can perform all standard CRUD actions for every model. Users can create posts and comment on them, as well as edit them and delete them. Users can also create collections and add items to those collections, as well as leave reviews with ratings on collections. Users can also edit collections, items, and reviews. This app makes use of styling from Material-UI, the same framework that is used by Google.
 
-Coming soon: This app will eventually be deployed to a Heroku server.
+Please visit the live demo at https://collect-it.herokuapp.com/ to give it a try!
 
 ## Contributing
 
