@@ -59,6 +59,14 @@ export default function postsReducer(state = {
 
       return newState;
 
+    case 'SORT_POSTS':
+      let sortedState = {
+        ...state,
+        posts: [...state.posts].sort((a, b) => b.likes.length - a.likes.length)
+      }
+
+      return sortedState;
+
     default:
       return state;
   }

@@ -81,3 +81,9 @@ export function updatePost(state) {
       }));
   }
 }
+
+export function sortByLikes() {
+  return dispatch => {
+    dispatch({ type: "SORT_POSTS" });
+  }
+}
