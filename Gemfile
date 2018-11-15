@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.7'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
-
+gem "rack", ">= 2.0.6"
 gem 'foreman', '~> 0.82.0'
 gem "loofah", ">= 2.2.3"
 gem 'active_model_serializers'
