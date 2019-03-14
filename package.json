@@ -9,6 +9,7 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
-    "merge": "^1.2.1"
+    "merge": "^1.2.1",
+    "webpack-dev-server": ">=3.1.11"
   }
 }
